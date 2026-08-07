@@ -1,0 +1,63 @@
+//gfg
+
+/* Structure of Linked List Node
+class Node {
+    int data;
+    Node next;
+    Node random;
+
+    Node(int x) {
+        data = x;
+        next = null;
+        random = null;
+    }
+}*/
+
+class Solution {
+    
+    //deep copy
+    
+    public Node deepCopy(Node h1){
+        Node temp1= h1;
+        Node h2= new Node(-1);
+        Node temp2= h2;
+        
+        while(temp1!=null){
+            Node t= new Node(temp1.data);
+            temp2.next=t;
+            temp2=temp2.next;
+            temp1=temp1.next;
+        }
+        return h2.next;
+    }
+    
+    public Node cloneLinkedList(Node a) {
+        Node b = deepCopy(a);
+        
+        HashMap<Node,Node> map= new HashMap<>();
+        
+        Node tempA= a;
+        Node tempB=b;
+        map.put(null,null);
+       
+       while(tempA!=null){   // LL ko map me daalo 
+           map.put(tempA,tempB);
+            tempA=tempA.next;
+            tempB=tempB.next;
+          
+       }  
+     
+       tempA=a; // wapis bhejo starting me
+  
+       while(tempA!=null){ // 
+           tempB= map.get(tempA);
+           tempB.random=map.get(tempA.random);
+           tempA=tempA.next;
+       }
+        
+        return b;
+        
+       
+        
+    }
+}
