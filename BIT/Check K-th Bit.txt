@@ -1,0 +1,13 @@
+class CheckBit {
+    static boolean checkKthBit(int n, int k) {
+        
+    //     n=n<<k; //right shift and check the lSB
+      
+    //   if(n%2==0){
+    //       return false ;
+    //   }
+    //   return true;
+    return ((n>>k)%2==1);
+        
+    }
+}
