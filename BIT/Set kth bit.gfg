@@ -1,0 +1,9 @@
+class Solution {
+    static int setKthBit(int n, int k) {
+        
+    int a= 1<<k; // create a new new number and or with the given number 
+    
+    return(n|a);
+        
+    }
+}
