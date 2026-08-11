@@ -1,0 +1,21 @@
+class Solution {
+    public int reverseBits(int n) {
+         
+         int ans =0; // to store the reverse no
+         
+        while(n>0) {
+         
+          int bit = n & 1; // to get the last bit no
+          
+          ans = ans << 1; // create space for the new bit to be stored
+          
+          ans = ans|bit; //put the bit in ans
+          
+          n= n>>1;  // remove the last bit number stored in ans 
+         }
+          
+          return ans;
+          
+        
+    }
+}
