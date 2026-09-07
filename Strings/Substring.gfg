@@ -1,0 +1,14 @@
+class Solution {
+
+    String substring(String s, int l, int r) {
+        
+        String s1= " ";
+        
+        for(int i= l ; i<=r; i++) {
+           
+           s1 +=s.charAt(i);
+        }
+        return s1;
+        
+    }
+}

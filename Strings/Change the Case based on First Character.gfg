@@ -1,0 +1,12 @@
+class Solution {
+    String modify(String s) {
+
+        char i = s.charAt(0);
+
+        if (Character.isLowerCase(i)) {
+             return s.toLowerCase();
+        } else {
+             return s.toUpperCase();
+        }
+    }
+}
