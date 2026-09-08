@@ -1,0 +1,34 @@
+class Solution {
+    public int reverseExponentiation(int n) {
+        
+      
+          int rev = reverse(n, 0);
+
+          return pow(n, rev);
+      }
+
+      public static int reverse(int n, int rev) {
+
+          if (n == 0) {
+              return rev;
+          }
+
+          return reverse(n / 10, rev * 10 + n % 10);
+      }
+
+      public static int pow(int x, int n) {
+
+          if (n == 0) {
+              return 1;
+          }
+
+          int half = pow(x, n / 2);
+
+          if (n % 2 == 0) {
+              return half * half;
+          }
+
+          return half * half * x;
+      
+    }
+}
