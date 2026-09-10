@@ -1,0 +1,29 @@
+class Solution {
+    
+    
+    private void  subsequence(String ans,String s,int idx, List<String>list){
+        
+        if(idx == s.length()){
+            
+                list.add(ans);
+             
+              return;
+        }
+               
+        char ch = s.charAt(idx);
+        
+         subsequence(ans+ch,s,idx+1,list); //pick the string
+         subsequence(ans,s,idx+1,list); // skip 
+        
+    }
+    public List<String> powerSet(String s) {
+        
+        List<String> list = new ArrayList<>();
+        
+         subsequence("",s,0, list);
+         Collections.sort(list);
+        
+      return list;
+        
+    }
+}
