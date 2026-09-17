@@ -1,0 +1,22 @@
+class Solution {
+    int getMiddle(Node head) {
+        
+    
+      Node slow = head;
+            Node fast = head;
+
+            // Find the middle node
+            while (fast != null && fast.next != null) {
+
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            // slow points to the middle
+            // For even length, it points to the second middle
+            
+            return slow.data;
+    
+        
+    }
+}
