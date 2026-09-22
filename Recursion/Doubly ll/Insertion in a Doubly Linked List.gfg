@@ -1,0 +1,24 @@
+class Solution {
+    Node insertAtPos(Node head, int p, int x) {
+
+        Node temp = head;
+        Node t = new Node(x);
+
+        // Reach the pth node
+        for (int i = 0; i < p; i++) {
+            temp = temp.next;
+        }
+
+        // Insert after temp
+        t.next = temp.next;
+
+        if (temp.next != null) {
+            temp.next.prev = t;
+        }
+
+        temp.next = t;
+        t.prev = temp;
+
+        return head;
+    }
+}
