@@ -1,0 +1,25 @@
+class Solution {
+    /* Returns level of given data value */
+    int getLevel(Node root, int data) {
+        
+        if(root == null){
+            return 0;
+        }
+        
+        if( root.data == data){
+            return 1;
+        }
+        
+        int left = getLevel(root.left,data);
+        if(left != 0){
+            return 1+left;
+        }
+        
+        int right = getLevel(root.right,data);
+        
+        if(right != 0){
+            return 1+right;
+        }
+        return 0;
+    }
+}
